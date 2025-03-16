@@ -1,0 +1,39 @@
+﻿@model Order
+
+@{
+    ViewData["Title"] = $"Заказ {Model.Id}";
+}
+
+<div class="table-responsive">
+    <table class="table table-striped table-hover">
+        <tr>
+            <td>Номер</td>
+            <td>@Model.Id</td>
+        </tr>
+        <tr>
+            <td>Город отправителя</td>
+            <td>@Model.SenderCity</td>
+        </tr>
+        <tr>
+            <td>Адрес отправителя</td>
+            <td>@Model.SenderAdress</td>
+        </tr>
+        <tr>
+            <td>Город получателя</td>
+            <td>@Model.RecieverCity</td>
+        </tr>
+        <tr>
+            <td>Адрес получателя</td>
+            <td>@Model.RecieverAdress</td>
+        </tr>
+        <tr>
+            <td>Вес груза, г</td>
+            <td>@Model.WeightInGrams</td>
+        </tr>
+        <tr>
+            <td>Дата забора груза</td>
+            <td>@Model.PickUpDate.ToShortDateString()</td>
+        </tr>
+    </table>
+    <a class="btn btn-secondary m-3" asp-controller="Home" asp-action="Index">Назад</a>
+</div>
