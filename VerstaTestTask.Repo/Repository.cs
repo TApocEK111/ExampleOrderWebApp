@@ -18,14 +18,14 @@ public class Repository<T> : IRepository<T> where T : Entity
     {
         if (entity == null) throw new ArgumentNullException(nameof(entity));
         _entities.Add(entity);
-        _db.SaveChanges();
+        SaveChanges();
     }
 
     public async Task AddAsync(T entity)
     {
         if (entity == null) throw new ArgumentNullException(nameof(entity));
         await _entities.AddAsync(entity);
-        await _db.SaveChangesAsync();
+        await SaveChangesAsync();
     }
 
     public List<T> GetAll()
@@ -40,7 +40,7 @@ public class Repository<T> : IRepository<T> where T : Entity
 
     public async Task<T> GetByIdAsync(Guid id)
     {
-        return await _entities.FindAsync(id)!;
+        return (await _entities.FindAsync(id))!;
     }
 
     public void SaveChanges()

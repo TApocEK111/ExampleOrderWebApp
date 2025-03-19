@@ -6,4 +6,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\VerstaTestTask.Domain\VerstaTestTask.Domain.csproj" />
+    <ProjectReference Include="..\VerstaTestTask.Service\VerstaTestTask.Service.csproj" />
+  </ItemGroup>
+
 </Project>

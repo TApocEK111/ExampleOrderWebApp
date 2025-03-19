@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\VerstaTestTask.Domain\VerstaTestTask.Domain.csproj" />
+    <ProjectReference Include="..\VerstaTestTask.Repo\VerstaTestTask.Repo.csproj" />
+  </ItemGroup>
+
 </Project>

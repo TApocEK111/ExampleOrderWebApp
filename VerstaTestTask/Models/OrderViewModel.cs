@@ -4,6 +4,7 @@ namespace VerstaTestTask.Web.Models;
 
 public class OrderViewModel
 {
+    public Guid Id { get; set; }
     public uint Number { get; set; }
 
     [Required]
@@ -28,4 +29,6 @@ public class OrderViewModel
 
     [Required]
     public required DateTime PickUpDate { get; set; }
+
+    public bool IsNew { get; set; } = false;
 }
