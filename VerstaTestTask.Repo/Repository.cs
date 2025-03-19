@@ -3,7 +3,7 @@ using VerstaTestTask.Domain;
 
 namespace VerstaTestTask.Repo;
 
-public class Repository<T> : IRepository<T>, IRepositoryAsync<T> where T : Entity
+public class Repository<T> : IRepository<T> where T : Entity
 {
     private readonly AppDbContext _db;
     private readonly DbSet<T> _entities;
