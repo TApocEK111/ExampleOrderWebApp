@@ -1,8 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using VerstaTestTask.Data;
-using VerstaTestTask.Models;
 
-namespace VerstaTestTask.Controllers
+namespace VerstaTestTask.Web.Controllers
 {
     public class HomeController : Controller
     {

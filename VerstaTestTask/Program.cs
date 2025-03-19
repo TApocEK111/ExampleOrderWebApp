@@ -1,7 +1,4 @@
-using Microsoft.EntityFrameworkCore;
-using VerstaTestTask.Data;
-
-namespace VerstaTestTask
+namespace VerstaTestTask.Web
 {
     public class Program
     {

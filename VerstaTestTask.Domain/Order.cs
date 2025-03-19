@@ -1,25 +1,29 @@
-﻿using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace VerstaTestTask.Models;
+namespace VerstaTestTask.Domain;
 
-public class Order
+public class Order : Entity
 {
-    public Guid Id { get; init; }
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    [Required]
+    public uint Number { get; set; }
 
-    [StringLength(170, MinimumLength = 1, ErrorMessage = "Слишком длинное название города отправителя")]
-    public required string SenderCity { get; init; }
+    [Required]
+    public required string SenderCity { get; set; }
 
-    [StringLength(300, MinimumLength = 2, ErrorMessage = "Слишком длинный адрес отправителя")]
-    public required string SenderAdress { get; init; }
+    [Required]
+    public required string SenderAdress { get; set; }
 
-    [StringLength(170, MinimumLength = 1, ErrorMessage = "Слишком длинное название города получателя")]
-    public required string RecieverCity { get; init; }
+    [Required]
+    public required string RecieverCity { get; set; }
 
-    [StringLength(300, MinimumLength = 2, ErrorMessage = "Слишком длинный адрес получателя")]
-    public required string RecieverAdress { get; init; }
+    [Required]
+    public required string RecieverAdress { get; set; }
 
-    [Range(0.01, double.MaxValue, ErrorMessage = "Неправильно задан вес")]
-    public required double WeightInGrams { get; init; }
-    public required DateTime PickUpDate { get; init; }
+    [Required]
+    public required double WeightInGrams { get; set; }
+
+    [Required]
+    public required DateTime PickUpDate { get; set; }
 }
