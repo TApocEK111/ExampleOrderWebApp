@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+using VerstaTestTask.Repo;
 using VerstaTestTask.Service;
 
 namespace VerstaTestTask.Web
@@ -10,7 +12,9 @@ namespace VerstaTestTask.Web
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            builder.Services.AddSingleton<IOrderService, OrderService>();
+            builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite("Data Source=verstaTest.db"));
+            builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            builder.Services.AddTransient<IOrderService, OrderService>();
 
             var app = builder.Build();
 
