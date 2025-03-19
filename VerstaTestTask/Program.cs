@@ -1,3 +1,5 @@
+using VerstaTestTask.Service;
+
 namespace VerstaTestTask.Web
 {
     public class Program
@@ -8,8 +10,7 @@ namespace VerstaTestTask.Web
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            builder.Services.AddDbContext<AppDbContext>(
-                options => options.UseSqlite("Data Source=verstaOrders.db"));
+            builder.Services.AddSingleton<IOrderService, OrderService>();
 
             var app = builder.Build();
 
